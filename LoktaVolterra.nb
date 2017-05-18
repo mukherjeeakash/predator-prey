@@ -1,0 +1,202 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7360,        192]
+NotebookOptionsPosition[      6919,        174]
+NotebookOutlinePosition[      7263,        189]
+CellTagsIndexPosition[      7220,        186]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{
+  "loktavolterra", ",", "a", ",", "b", ",", "c", ",", "d", ",", "prey", ",", 
+   "predator", ",", "Derivative", ",", "t"}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"loktavolterra", "[", 
+    RowBox[{"a_", ",", "b_", ",", "c_", ",", "d_", ",", "e_", ",", "f_"}], 
+    "]"}], ":=", 
+   RowBox[{
+    RowBox[{"loktavolterra", "[", 
+     RowBox[{"a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f"}], "]"}], 
+    "=", 
+    RowBox[{"NDSolve", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"prey", "'"}], "[", "t", "]"}], "\[Equal]", 
+         RowBox[{
+          RowBox[{"a", "*", 
+           RowBox[{"prey", "[", "t", "]"}]}], "-", 
+          RowBox[{"b", "*", 
+           RowBox[{"prey", "[", "t", "]"}], "*", 
+           RowBox[{"predator", "[", "t", "]"}]}]}]}], ",", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"predator", "'"}], "[", "t", "]"}], "\[Equal]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "c"}], "*", 
+           RowBox[{"predator", "[", "t", "]"}]}], "+", 
+          RowBox[{"d", "*", 
+           RowBox[{"prey", "[", "t", "]"}], "*", 
+           RowBox[{"predator", "[", "t", "]"}]}]}]}], ",", 
+        RowBox[{
+         RowBox[{"prey", "[", "0", "]"}], "\[Equal]", "e"}], ",", 
+        RowBox[{
+         RowBox[{"predator", "[", "0", "]"}], "\[Equal]", "f"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"prey", ",", "predator"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "200"}], "}"}]}], "]"}]}]}], ";"}], "\n", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"prey", "[", "x", "]"}], "/.", 
+         RowBox[{"loktavolterra", "[", 
+          RowBox[{"a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f"}], 
+          "]"}]}], ",", 
+        RowBox[{
+         RowBox[{"predator", "[", "x", "]"}], "/.", 
+         RowBox[{"loktavolterra", "[", 
+          RowBox[{"a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f"}], 
+          "]"}]}]}], "}"}], ")"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "200"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", "Green"}], "}"}]}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "0.01", ",", ".5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"b", ",", "0.01", ",", ".5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"c", ",", "0.01", ",", ".5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"d", ",", "0.01", ",", ".5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"e", ",", "5", ",", "20"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"f", ",", "5", ",", "20"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7040583945865717`*^9, 
+  3.7040583946558137`*^9}},ExpressionUUID->"316ff27a-bb27-443d-a8b4-\
+9a3f01126c15"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 
+    0.15000000000000022`, $CellContext`b$$ = 0.082, $CellContext`c$$ = 
+    0.44, $CellContext`d$$ = 0.155, $CellContext`e$$ = 
+    10.7, $CellContext`f$$ = 5.7, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`a$$], 0.01, 0.5}, {
+      Hold[$CellContext`b$$], 0.01, 0.5}, {
+      Hold[$CellContext`c$$], 0.01, 0.5}, {
+      Hold[$CellContext`d$$], 0.01, 0.5}, {
+      Hold[$CellContext`e$$], 5, 20}, {
+      Hold[$CellContext`f$$], 5, 20}}, Typeset`size$$ = {360., {108., 114.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`a$1938$$ = 0, $CellContext`b$1943$$ = 
+    0, $CellContext`c$1944$$ = 0, $CellContext`d$1945$$ = 
+    0, $CellContext`e$1946$$ = 0, $CellContext`f$1947$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 0.01, $CellContext`b$$ = 
+        0.01, $CellContext`c$$ = 0.01, $CellContext`d$$ = 
+        0.01, $CellContext`e$$ = 5, $CellContext`f$$ = 5}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$1938$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$1943$$, 0], 
+        Hold[$CellContext`c$$, $CellContext`c$1944$$, 0], 
+        Hold[$CellContext`d$$, $CellContext`d$1945$$, 0], 
+        Hold[$CellContext`e$$, $CellContext`e$1946$$, 0], 
+        Hold[$CellContext`f$$, $CellContext`f$1947$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[{
+         ReplaceAll[
+          $CellContext`prey[$CellContext`x], 
+          $CellContext`loktavolterra[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$, $CellContext`d$$, $CellContext`e$$, $CellContext`f$$]], 
+         ReplaceAll[
+          $CellContext`predator[$CellContext`x], 
+          $CellContext`loktavolterra[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$, $CellContext`d$$, $CellContext`e$$, $CellContext`f$$]]}, \
+{$CellContext`x, 0, 200}, PlotRange -> All, PlotStyle -> {Red, Green}, 
+        PlotRange -> All], 
+      "Specifications" :> {{$CellContext`a$$, 0.01, 0.5}, {$CellContext`b$$, 
+         0.01, 0.5}, {$CellContext`c$$, 0.01, 0.5}, {$CellContext`d$$, 0.01, 
+         0.5}, {$CellContext`e$$, 5, 20}, {$CellContext`f$$, 5, 20}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{411., {234., 241.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.7040584232897434`*^9},ExpressionUUID->"d1cac2c2-8802-491d-862f-\
+dce5110ee8ab"]
+}, Open  ]]
+},
+WindowSize->{759, 553},
+WindowMargins->{{Automatic, 252}, {24, Automatic}},
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (March 13, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 3053, 83, 240, "Input", "ExpressionUUID" -> \
+"316ff27a-bb27-443d-a8b4-9a3f01126c15"],
+Cell[3636, 107, 3267, 64, 492, "Output", "ExpressionUUID" -> \
+"d1cac2c2-8802-491d-862f-dce5110ee8ab"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
